@@ -10,8 +10,8 @@ export default class ExpenseEntries extends React.Component {
     const { name, temp, pressure, humidity, low, high, wind  } = this.props;
     return (
       <div className='col-6'>
-        <div className='card text-center'>
-          <h3 className='card-header alert alert-primary'>City Information</h3>
+        <div className='card'>
+          <h6 className='card-header alert alert-primary'>City Information</h6>
           <div className='card-body'>
             <div className='row'>
               <div className='card-body'>
