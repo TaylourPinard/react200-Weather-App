@@ -11,29 +11,29 @@ export default class ExpenseEntries extends React.Component {
     return (
       <div className='col-6'>
         <div className='card text-center'>
-          <h3 className='card-header'>City Information</h3>
+          <h3 className='card-header alert alert-primary'>City Information</h3>
           <div className='card-body'>
             <div className='row'>
               <div className='card-body'>
-                <h5>Temperature (F)</h5>
+                <h6>Temperature (F)</h6>
                 <p></p>
               </div>
               <div className='card-body'>
-                <h5>Pressure</h5>
+                <h6>Pressure</h6>
               </div>
               <div className='card-body'>
-                <h5>Humidity</h5>
+                <h6>Humidity</h6>
               </div>
             </div>
             <div className='row'>
               <div className='card-body'>
-                <h5>Lowest Temp (F)</h5>
+                <h6>Lowest Temp (F)</h6>
               </div>
               <div className='card-body'>
-                <h5>Highest Temp (F)</h5>
+                <h6>Highest Temp (F)</h6>
               </div>
               <div className='card-body'>
-                <h5>Wind Speed</h5>
+                <h6>Wind Speed</h6>
               </div>
             </div>
           </div>

@@ -16,8 +16,7 @@ export default class ExpenseEntries extends React.Component {
             <table className='table table-striped border-0'>
               <thead>
                 <tr>
-                  <th>City</th>
-                  <th className='d-flex justify-content-end'>Date</th>
+                  
                 </tr>
               </thead>
               <tbody>
