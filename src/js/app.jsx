@@ -1,6 +1,6 @@
 import React from 'react';
 import CurrentWeather from './components/CurrentWeather';
-//import Search from './components/Search';
+import Search from './components/Search';
 import History from './components/History';
 
 export default class App extends React.Component {
@@ -11,7 +11,7 @@ export default class App extends React.Component {
           <h1>SDCS Weather Application</h1>
           <p>Always know if you'll need an umbrella!</p>
         </div>
-
+        <Search />
         <div className='row'>
           <CurrentWeather />
           <History />
