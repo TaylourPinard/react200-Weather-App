@@ -11,8 +11,10 @@ export default class App extends React.Component {
           <h1>SDCS Weather Application</h1>
           <p>Always know if you'll need an umbrella!</p>
         </div>
-        <Search />
-        <div className='row'>
+        <div className='pt-3'>
+          <Search />
+        </div>
+        <div className='row pt-3'>
           <CurrentWeather />
           <History />
         </div>
