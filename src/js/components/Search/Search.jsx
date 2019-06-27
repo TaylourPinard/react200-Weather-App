@@ -11,18 +11,12 @@ export default class ExpenseEntries extends React.Component {
     super(props);
     
     this.handleUpdateCity = this.handleUpdateCity.bind(this);
-    this.handleGetWeather = this.handleGetWeather.bind(this);
   }
 
   handleUpdateCity(event){
     const { dispatch } = this.props;
     const { value } = event.target;
     dispatch(updateCityName(value));
-  }
-
-  handleGetWeather(city){
-    const { dispatch } = this.props;
-    dispatch(getWeather(city));
   }
 
   render() {
@@ -39,7 +33,7 @@ export default class ExpenseEntries extends React.Component {
         </div>
         <div className='row'>
           <input className='form-control col-sm-11' type='text' onChange={ this.handleUpdateCity }></input>
-          <button className='col-sm-1' onClick={ this.handleGetWeather }>Go!</button>
+          <button className='col-sm-1'>Go!</button>
         </div>
       </form>
     );

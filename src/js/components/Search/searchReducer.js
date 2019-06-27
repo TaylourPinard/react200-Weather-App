@@ -19,19 +19,6 @@ export default function searchReducer(state = defaultState, action){
       }
     }
 
-    case 'GET_WEATHER': {
-      return {
-        ...state,
-        city: payload.city,
-        temp: payload.temp,
-        pressure: payload.pressure,
-        humidity: payload.humidity,
-        low: payload.low,
-        high: payload.high,
-        wind: payload.wind
-      }
-    }
-
     default: {
       return state;
     }
