@@ -33,7 +33,7 @@ export default class ExpenseEntries extends React.Component {
         </div>
         <div className='row'>
           <input className='form-control col-sm-11' type='text' onChange={ this.handleUpdateCity }></input>
-          <button className='col-sm-1'>Go!</button>
+          <button type='button' className='col-sm-1'>Go!</button>
         </div>
       </form>
     );
