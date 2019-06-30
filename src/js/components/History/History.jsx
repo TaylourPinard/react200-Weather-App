@@ -7,7 +7,6 @@ export default class ExpenseEntries extends React.Component {
   }
 
   render() {
-    //const {   } = this.props;
     return (
       <div className='col-6 col-md-6'>
         <div className='card'>

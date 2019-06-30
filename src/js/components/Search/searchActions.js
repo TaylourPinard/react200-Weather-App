@@ -4,3 +4,13 @@ export function updateCityName(city) {
     payload: { city }
   };
 }
+
+export function getWeather(city){
+  return {
+    type: 'GET_WEATHER',
+    async payload(city) {
+      const weatherData = await fetch(`./search/${city}`);
+      return weatherData;
+    }
+  }
+}

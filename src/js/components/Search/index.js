@@ -1,18 +1,21 @@
 import { connect } from 'react-redux';
 import Search from './Search';
-//import /* { actions } */ from './searchActions';
+import { 
+  updateCityName,
+  getWeather
+ } from './searchActions';
 
 function mapStoreToProps(store){
   return {
-    // city: store.city,
-    // lat: store.lat,
-    // long: store.long,
-    // temp: store.temp,
-    // pressure: store.pressure,
-    // humidity: store.humidity,
-    // low: store.low,
-    // high: store.high,
-    // wind: store.wind
+    city: store.city,
+    lat: store.lat,
+    lon: store.lon,
+    temp: store.temp,
+    pressure: store.pressure,
+    humdity: store.humdity,
+    low: store.low,
+    high: store.high,
+    wind: store.wind
   };
 }
 
