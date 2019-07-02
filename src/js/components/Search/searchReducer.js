@@ -22,18 +22,18 @@ export default function searchReducer(state = defaultState, action){
       }
     }
 
-    case 'GET_WEATHER': {
+    case 'GET_WEATHER_FULFILLED': {
       return {
         ...state,
-        city: payload.name,
-        lat: payload.coord.lat,
-        lon: payload.coord.lon,
-        temp: payload.main.temp,
-        pressure: payload.main.pressure,
-        humidity: payload.main.humidity,
-        low: payload.main.temp_min,
-        high: payload.main.temp_max,
-        wind: payload.wind.speed
+        city: payload.data.name,
+        lat: payload.data.coord.lat,
+        lon: payload.data.coord.lon,
+        temp: payload.data.main.temp,
+        pressure: payload.data.main.pressure,
+        humidity: payload.data.main.humidity,
+        low: payload.data.main.temp_min,
+        high: payload.data.main.temp_max,
+        wind: payload.data.wind.speed
       }
     }
 

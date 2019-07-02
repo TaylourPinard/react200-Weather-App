@@ -7,15 +7,15 @@ import {
 
 function mapStoreToProps(store){
   return {
-    city: store.city,
-    lat: store.lat,
-    lon: store.lon,
-    temp: store.temp,
-    pressure: store.pressure,
-    humdity: store.humdity,
-    low: store.low,
-    high: store.high,
-    wind: store.wind
+    city: store.search.city,
+    lat: store.search.lat,
+    lon: store.search.lon,
+    temp: store.search.temp,
+    pressure: store.search.pressure,
+    humidity: store.search.humidity,
+    low: store.search.low,
+    high: store.search.high,
+    wind: store.search.wind
   };
 }
 

@@ -1,3 +1,5 @@
+const axios = require('axios');
+
 export function updateCityName(city) {
   return {
     type: 'UPDATE_CITY_NAME',
@@ -8,9 +10,6 @@ export function updateCityName(city) {
 export function getWeather(city){
   return {
     type: 'GET_WEATHER',
-    async payload(city) {
-      const weatherData = await fetch(`./search/${city}`);
-      return weatherData;
-    }
+    payload: axios.get(`./search/${city}`)
   }
 }

@@ -1,5 +1,6 @@
 /* eslint-disable eol-last */
 import React from 'react';
+import PropTypes from 'prop-types';
 
 import {
   updateCityName,
@@ -7,11 +8,11 @@ import {
 } from './searchActions';
 
 export default class Search extends React.Component {
-  constructor(props) {
+  constructor(props){
     super(props);
-    
-    this.handleUpdateCity = this.handleUpdateCity.bind(this);
+
     this.handleGetWeather = this.handleGetWeather.bind(this);
+    this.handleUpdateCity = this.handleUpdateCity.bind(this);
   }
 
   handleUpdateCity(event){
@@ -22,8 +23,8 @@ export default class Search extends React.Component {
 
   handleGetWeather(event){
     event.preventDefault();
-    const { dispatch } = this.props;
-    dispatch(getWeather(value));
+    const { dispatch, city } = this.props;
+    dispatch(getWeather(city));
   }
 
   render() {
@@ -31,11 +32,11 @@ export default class Search extends React.Component {
       <form className='col-md-12'>
         <div className='row'>
           <div className='btn-group'>
-            <button className='btn btn-primary'>San Diego</button>
-            <button className='btn btn-primary'>New York</button>
-            <button className='btn btn-primary'>Washington D.C.</button>
-            <button className='btn btn-primary'>London</button>
-            <button className='btn btn-primary'>Tokyo</button>
+            <button type='button' className='btn btn-primary'>San Diego</button>
+            <button type='button' className='btn btn-primary'>New York</button>
+            <button type='button' className='btn btn-primary'>Washington D.C.</button>
+            <button type='button' className='btn btn-primary'>London</button>
+            <button type='button' className='btn btn-primary'>Tokyo</button>
           </div>
         </div>
         <div className='row'>
@@ -46,3 +47,7 @@ export default class Search extends React.Component {
     );
   }
 }
+
+Search.propTypes = {
+  store: PropTypes.object
+};
