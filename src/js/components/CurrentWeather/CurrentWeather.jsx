@@ -1,17 +1,22 @@
 import React from 'react';
 
-export default class ExpenseEntries extends React.Component {
+export default class CurrentWeather extends React.Component {
   constructor(props){
     super(props);
   }
 
   render() {
-    const { city, temp, pressure, humidity, low, high, wind  } = this.props;
+    const { icon, weather, lat, lon, temp, pressure, humidity, low, high, wind, history } = this.props;
     return (
       <div className='col-6'>
         <div className='card'>
           <h6 className='card-header alert alert-primary'>City Information</h6>
-          <div className='card-body'>
+          <div className='card-body .bg-secondary'>
+            <div className='row justify-content-center'>
+              { history.length ? <img style={{width: '100px', height: '100px', margin: '0px', padding: '0px'}} src={`http://openweathermap.org/img/wn/${icon}@2x.png`} alt={weather}></img> : '' } 
+              <h2 className='mr-3 mt-4'>{ history.length ? history[history.length - 1].city : ''}</h2>
+            </div>
+            <p className='text-center'>{ history.length ? `lat: ${lat}, lon: ${lon}` : ''}</p>
             <div className='row'>
               <div className='card-body'>
                 <h6>Temperature (F)</h6>

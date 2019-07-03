@@ -1,13 +1,14 @@
 const defaultState = {
+  id: -1,
   city: '',
-  lat: 0.0,
-  lon: 0.0,
-  temp: 0.0,
-  pressure: 0,
-  humidity: 0,
-  low: 0,
-  high: 0,
-  wind: 0.0,
+  lat: '',
+  lon: '',
+  temp: '',
+  pressure: '',
+  humidity: '',
+  low: '',
+  high: '',
+  wind: '',
   history: []
 }
 
@@ -25,15 +26,25 @@ export default function searchReducer(state = defaultState, action){
     case 'GET_WEATHER_FULFILLED': {
       return {
         ...state,
+        id: payload.data.id,
         city: payload.data.name,
+        weather: payload.data.weather[0].description,
         lat: payload.data.coord.lat,
         lon: payload.data.coord.lon,
+        icon: payload.data.weather[0].icon,
         temp: payload.data.main.temp,
         pressure: payload.data.main.pressure,
         humidity: payload.data.main.humidity,
         low: payload.data.main.temp_min,
         high: payload.data.main.temp_max,
-        wind: payload.data.wind.speed
+        wind: payload.data.wind.speed,
+        history: [
+          ...state.history,
+          {
+            city: payload.data.name,
+            date: new Date().toLocaleString(),
+          }
+        ]
       }
     }
 

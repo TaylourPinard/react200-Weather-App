@@ -13,6 +13,7 @@ export default class Search extends React.Component {
 
     this.handleGetWeather = this.handleGetWeather.bind(this);
     this.handleUpdateCity = this.handleUpdateCity.bind(this);
+    this.handleCityButton = this.handleCityButton.bind(this);
   }
 
   handleUpdateCity(event){
@@ -27,16 +28,23 @@ export default class Search extends React.Component {
     dispatch(getWeather(city));
   }
 
+  handleCityButton(event){
+    const { dispatch } = this.props;
+    const button = document.getElementById(event.target.id);
+    if((button.innerText || button.textContent) != 'Washington D.C.') dispatch(getWeather(button.innerText || button.textContent));
+    else dispatch(getWeather('Washington'));
+  }
+
   render() {
     return (
       <form className='col-md-12'>
         <div className='row'>
           <div className='btn-group'>
-            <button type='button' className='btn btn-primary'>San Diego</button>
-            <button type='button' className='btn btn-primary'>New York</button>
-            <button type='button' className='btn btn-primary'>Washington D.C.</button>
-            <button type='button' className='btn btn-primary'>London</button>
-            <button type='button' className='btn btn-primary'>Tokyo</button>
+            <button type='button' className='btn btn-primary' id='San Diego' onClick={ this.handleCityButton }>San Diego</button>
+            <button type='button' className='btn btn-primary' id='New York' onClick={ this.handleCityButton }>New York</button>
+            <button type='button' className='btn btn-primary' id='Washington' onClick={ this.handleCityButton }>Washington D.C.</button>
+            <button type='button' className='btn btn-primary' id='London' onClick={ this.handleCityButton }>London</button>
+            <button type='button' className='btn btn-primary' id='Tokyo' onClick={ this.handleCityButton }>Tokyo</button>
           </div>
         </div>
         <div className='row'>

@@ -15,7 +15,8 @@ function mapStoreToProps(store){
     humidity: store.search.humidity,
     low: store.search.low,
     high: store.search.high,
-    wind: store.search.wind
+    wind: store.search.wind,
+    history: store.search.history
   };
 }
 
